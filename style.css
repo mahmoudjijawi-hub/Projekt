@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 /* التنسيقات العامة */
 *{
     margin: 0;
@@ -477,4 +480,5 @@ section{
     .skills-grid,.projects-grid{
         grid-template-columns: 1fr;
     }
+
 }
