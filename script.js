@@ -44,27 +44,31 @@ themeToggle.addEventListener('click',()=>{
     }
 });
 // التمرير السلس للروابط
-document.querySelectorAll('a[href^="#"]').forEach(anchor =>{
-    anchor.addEventListener('click',function(e){
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
         e.preventDefault();
         
         const targetId = this.getAttribute('href');
-        if(targetId==='#')return;
+        if (targetId === '#') return;
+        
         const targetElement = document.querySelector(targetId);
-        if(targetElement){
+        if (targetElement) {
             const navbarHeight = document.querySelector('.navbar').offsetHeight;
             const targetPosition = targetElement.offsetTop - navbarHeight;
+            
             window.scrollTo({
-                top:targetPosition,
-                behavior:'smooth'
+                top: targetPosition,
+                behavior: 'smooth'
             });
         }
     });
 });
+
 // نموذج الإتصال
 const contactForm = document.getElementById('contactForm');
 contactForm.addEventListener('submit',(e)=>{
     e.preventDefault();
     alert('شكرا لك تم استلام رسالتك وسيتم الرد عليك قريبا.');
     contactForm.reset();
+
 });
